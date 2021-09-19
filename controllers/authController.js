@@ -54,11 +54,11 @@ exports.enviarToken = async (req, res) => {
   await usuario.save();
 
   // url de reset
-  const resetUrl = `http://${req.headers.host}/reestablecer/${usuario.token}`;
+  const url = `${process.env.APP_URL}reestablecer/${usuario.token}`;
   await enviarEmail.enviar({
     to: usuario.email,
     subject: "Password Reset",
-    resetUrl,
+    url,
     archivo: "reestablecer-password",
   });
 

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const routes = require("./routes");
 const path = require("path"); // path lee el file sytem
@@ -16,6 +17,7 @@ const db = require("./config/db");
 require("./models/Proyectos");
 require("./models/Tareas");
 require("./models/Usuarios");
+
 
 db.sync()
   .then(() => console.log("conectado al servidor"))
@@ -65,4 +67,3 @@ app.use("/", routes());
 
 // definir puerto para express
 app.listen(3000);
-

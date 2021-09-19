@@ -1,4 +1,6 @@
+const crypto = require("crypto");
 const Usuarios = require("../models/Usuarios");
+const enviarEmail = require("../handlers/email");
 
 exports.formCrearCuenta = (req, res) => {
   res.render("crearCuenta", {
@@ -20,10 +22,30 @@ exports.crearCuenta = async (req, res) => {
 
   try {
     //Crear el usuario
+    const token = crypto.randomBytes(20).toString("hex");
     await Usuarios.create({
       email: email.toLowerCase(),
       password,
+      token,
     });
+
+    // Crear una url de confirmar
+    const url = `${process.env.APP_URL}confirmar/${token}`;
+
+    // crear un objecto de usuario
+    const usuario = {
+      email,
+    };
+    // Enviar email
+    await enviarEmail.enviar({
+      to: usuario.email,
+      subject: "Confirma tu correo",
+      url,
+      archivo: "confirmar-cuenta",
+    });
+
+    //redirigir al usuario
+    req.flash("correcto", "Enviamos un correo, confirma tu cuenta");
     res.redirect("/iniciar-sesion");
   } catch (error) {
     req.flash(
@@ -43,4 +65,24 @@ exports.formReestablecerPassword = (req, res) => {
   res.render("reestablecer", {
     nombrePagina: "Reestablecer tu Contrasena",
   });
+};
+
+exports.confirmarCuenta = async (req, res) => {
+  const usuario = await Usuarios.findOne({
+    where: {
+      token: req.params.token,
+    },
+  });
+
+  if (!usuario) {
+    req.flash("error", "No valido");
+    res.redirect("/crear-cuenta");
+  }
+
+  usuario.activo = 1;
+  usuario.token = null;
+  await usuario.save();
+
+  req.flash("correcto", "Cuenta activada correctamente");
+  res.redirect("/iniciar-sesion");
 };

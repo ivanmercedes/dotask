@@ -1,3 +1,4 @@
+const path = require("path");
 const nodemailer = require("nodemailer");
 const pug = require("pug");
 const juice = require("juice");
@@ -17,7 +18,7 @@ let transport = nodemailer.createTransport({
 //Generar HTML
 const generarHTML = (archivo, opciones = {}) => {
   const html = pug.renderFile(
-    `${__dirname}/../views/emails/${archivo}.pug`,
+    `${path.join(__dirname, "../")}views/emails/${archivo}.pug`,
     opciones,
   );
   return juice(html);
