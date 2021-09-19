@@ -13,6 +13,5 @@
      const porcentaje = document.getElementById('porcentaje');
      porcentaje.style.width = avance+'%';
      }
-
-     
+  
  }

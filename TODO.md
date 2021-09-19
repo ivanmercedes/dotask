@@ -1,0 +1,1 @@
+https://rubygarage.org/blog/how-to-build-pm-software-like-basecamp

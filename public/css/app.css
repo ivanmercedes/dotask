@@ -7,11 +7,14 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
+    
 }
 /** Login **/
 .login,
 .crear-cuenta {
-    background: #455A64;
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .contenedor-formulario {
     display: flex;
@@ -75,7 +78,7 @@ body {
     background-color: #FDD835;
     text-align: center;
     transition: background-color .5s ease-in-out;
-    padding: 2rem;
+    padding: 1rem;
     text-transform: uppercase;
     border: none;
     font-weight: 900;
@@ -84,7 +87,7 @@ body {
 
     display: flex;
     align-items: center;
-    line-height: 0;
+    line-height: 1.5;
 }
 .boton span {
     font-size: 2.2rem;
@@ -240,7 +243,7 @@ body.index {
     text-align: center;
     font-size: .9rem;
     font-weight: 900;
-    max-width: 300px;
+    max-width: 380px;
     margin: 0 auto 1rem auto;
     text-transform: uppercase;
 }
