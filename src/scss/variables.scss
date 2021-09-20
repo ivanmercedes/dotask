@@ -1,0 +1,65 @@
+// Body
+$body-bg: #17181f;
+$principal: #1e2027;
+$secondary: #17181c;
+$other: #17181c;
+$box-shadow: 0px 0px 20px #000000;
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//COLOR BG DARK
+$gray-900: #20212c;
+
+// $gray-100: #17181c;
+// $black: #fff;
+// Colors
+// $blue: #3490dc;
+// $indigo: #6574cd;
+// $purple: #9561e2;
+// $pink: #f66d9b;
+// $red: #ff335c;
+// $orange: #f6993f;
+// $yellow: #ffed4a;
+// $green: #38c172;
+// $teal: #4dc0b5;
+// $cyan: #6cb2eb;
+
+$border-color: #17181f;
+// $pagination-color: #666;
+// $pagination-bg: transparent;
+// $pagination-border-color: #666;
+// $pagination-hover-border-color: $red;
+// $pagination-hover-color: $red;
+// $pagination-hover-bg: transparent;
+// $pagination-active-color: white;
+// $pagination-active-bg: $red;
+// $pagination-focus-bg: transparent;
+// $pagination-focus-box-shadow: unset;
+
+
+
+$input-bg:                              $body-bg;
+// $input-disabled-bg:                     $gray-200;
+// $input-disabled-border-color:           null;
+
+ $input-color:                           white;
+// $input-border-color:                    $gray-400;
+// $input-border-width:                    $input-btn-border-width;
+// $input-box-shadow:                      $box-shadow-inset;
+
+// $input-border-radius:                   $border-radius;
+// $input-border-radius-sm:                $border-radius-sm;
+// $input-border-radius-lg:                $border-radius-lg;
+
+$input-focus-bg:                        $input-bg;
+// $input-focus-border-color:              tint-color($component-active-bg, 50%);
+// $input-focus-color:                     $input-color;
+// $input-focus-width:                     $input-btn-focus-width;
+// $input-focus-box-shadow:                $input-btn-focus-box-shadow;
+
+//  $input-placeholder-color:               $gray-600;
+// $input-plaintext-color:                 $body-color;
+
+// $input-height-border:                   $input-border-width * 2;

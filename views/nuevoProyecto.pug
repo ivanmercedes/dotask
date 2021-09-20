@@ -4,12 +4,12 @@ include  mixins/crearProyecto
 
 
 block content
-    .contenido-principal 
-        h1= nombrePagina
+    .container-fluid.py-4 
+        h1.text-white= nombrePagina
 
         if errores 
           each error in errores
-            .alerta= error.texto
-        
-
+           .alertas
+             .alerta(class=`error`)
+                        p=error.texto
         +crearProyecto(proyecto)

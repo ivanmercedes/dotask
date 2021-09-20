@@ -6,7 +6,7 @@ exports.proyectosHome = async (req, res) => {
   const proyectos = await Proyectos.findAll({ where: { usuarioId } });
 
   res.render("index", {
-    nombrePagina: "Proyectos",
+    nombrePagina: "Dashboard",
     proyectos,
   });
 };
@@ -30,7 +30,7 @@ exports.nuevoProyecto = async (req, res) => {
   let errores = [];
 
   if (!nombre) {
-    errores.push({ texto: "Agregar un nombre la Proyecto" });
+    errores.push({ texto: "Agregar un nombre al Proyecto" });
   }
 
   // si hay errores

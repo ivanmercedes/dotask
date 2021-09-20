@@ -17,14 +17,15 @@ exports.autenticarUsuario = passport.authenticate("local", {
 
 // funcion para revisar si el usuario esta logueado o no
 
-exports.usuarioAutenticado = (req, res, next) => {
-  // si el usuario esta autenticado, adelante
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  //sino esta autenticado
-  return res.redirect("/iniciar-sesion");
-};
+// Refactory deprecated
+// exports.usuarioAutenticado = (req, res, next) => {
+//   // si el usuario esta autenticado, adelante
+//   if (req.isAuthenticated()) {
+//     return next();
+//   }
+//   //sino esta autenticado
+//   return res.redirect("/iniciar-sesion");
+// };
 
 // funcion para cerrar sesion
 exports.cerrarSesion = (req, res) => {

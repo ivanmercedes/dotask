@@ -50,11 +50,12 @@ exports.crearCuenta = async (req, res) => {
   } catch (error) {
     req.flash(
       "error",
-      error.errors.map((error) => error.message),
+      // error.errors.map((error) => error.message),
+      'Este usuario ya existe.'
     );
     res.render("crearCuenta", {
       mensajes: req.flash(),
-      nombrePagina: "Crear cuenta en doTask",
+      nombrePagina: "Crear cuenta en UnTask",
       email,
       password,
     });

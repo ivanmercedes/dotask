@@ -1,22 +1,27 @@
 doctype html
 html(lang="en")
     head
-       include partials/header
-    body.login 
-        .contenedor-formulario 
-            h1= nombrePagina 
-            p Agrega tu e-mail para reestablecer la contrasena
-            if locals.mensajes
-              .alertas
-                each categoria in Object.keys(locals.mensajes)
-                    each error in mensajes[categoria]
-                        .alerta(class=`${categoria}`)
-                            p=error
-            form.caja-login(method="POST" action="/reestablecer")
-               .campo
-                 label(for="email") E-mail:
-                 input(type="email" name="email" placeholder="Tu Email" value= email)
-               .campo.enviar
-                 input.boton(type="submit" value="Reestablecer Password")
-               .campo.acciones
-                 a(href="/iniciar-sesion") Volver a login
+        include partials/header
+    body.login
+      .container
+
+        .text-center
+          h1.fw-bold.my-4.text-danger Un<span class="text-white">Task</span>
+      
+        if locals.mensajes
+          .alertas
+            each categoria in Object.keys(locals.mensajes)
+                each error in mensajes[categoria]
+                    .alerta(class=`${categoria}`)
+                        p=error
+
+        form.row.justify-content-center.align-items-center(method="POST" action="/reestablecer")
+            .bg-dark.col-md-5.rounded.shadow
+                h1.text-white.text-center.p-2= nombrePagina 
+                .mb-3
+                 input.form-control.border(type="email" name="email" placeholder="Tu Email" value= email)
+                .mb-3.enviar
+                    input.btn.btn-danger(type="submit" value="Reestablecer Password")
+                .mb-3.acciones.d-flex.justify-content-between
+                    a(href="/iniciar-sesion") Volver a login
+      

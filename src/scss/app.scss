@@ -1,0 +1,97 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap.scss";
+
+html {
+  height: -webkit-fill-available;
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow: hidden;
+ 
+  a {
+    color: #666;
+    &:hover {
+      color: #ff335c;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.login {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+}
+
+.alertas {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  animation-name: alerta;
+  animation-duration: 300ms;
+  .alerta {
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #000;
+    max-width: 265px;
+    p {
+      margin: 0;
+    }
+  }
+  .error {
+    background-color: red;
+    color: white;
+  }
+  .correcto {
+    background-color: white;
+  }
+}
+
+@keyframes alerta {
+  from {
+    right: -40rem;
+  }
+
+  to {
+    right: 1rem;
+  }
+}
+
+.sidebar{
+    top: 0;
+    transition: transform .4s ease;
+    @media(max-width: 768px){
+      transform: translateX(-288px);
+      position: fixed;
+      z-index: 10;
+    }
+
+    &.show{
+      transform: translateX(0) !important;
+    }
+}
+
+.barra {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.content{
+  padding-top: 5rem;
+}

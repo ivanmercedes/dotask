@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.1",
     "concurrently": "^6.0.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
@@ -31,11 +32,15 @@
     "express-validator": "^6.10.0",
     "html-to-text": "^8.0.0",
     "juice": "^8.0.0",
+    "mini-css-extract-plugin": "^2.3.0",
     "mysql2": "^2.2.5",
     "nodemailer": "^6.6.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pug": "^3.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
     "sequelize": "^6.6.2",
     "shortid": "^2.2.16",
     "slug": "^4.0.3",
@@ -45,9 +50,14 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.0.5",
+    "css-loader": "^6.3.0",
+    "node-sass": "^6.0.1",
     "nodemon": "^2.0.7",
-    "webpack": "^4.29.3",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.53.0",
     "webpack-cli": "^4.6.0"
   }
 }

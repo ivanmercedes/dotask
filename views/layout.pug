@@ -4,24 +4,15 @@ html(lang="es")
         include partials/header
     body 
      header.barra 
-        h1 DoTask - Administrador de Proyectos 
-        a(href="/cerrar-sesion") Cerrar Sesion
+       nav.navbar.navbar-expand-md.navbar-dark.bg-dark.py-3
+        .text-end.w-100.px-3 
+            //-  h1.text-danger.h3.fw-bold Un<span class="text-white">Task - Administrador de Proyectos</span>
+            a(href="/cerrar-sesion") <i class="fas fa-power-off"></i>
     
      main.contenedor
-        aside.contenedor-proyectos
-            .panel.crear-proyecto 
-                a(href="/nuevo-proyecto" class="boton") Nuevo Proyecto
-                    span +
-            .panel.lista-proyectos
-                h2 Proyectos
-                ul#proyectos.proyectos
-                    if(proyectos.length)
-                        each proyecto in proyectos
-                           li 
-                             a(href=`/proyectos/${proyecto.url}`)= proyecto.nombre
-                            
-        //- pre= vardump(proyectos)    
-        block content 
+       include partials/sidebar 
+       .content.container-fluid
+         block content 
 
 
      script(src="/dist/bundle.js")

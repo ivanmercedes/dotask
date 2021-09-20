@@ -3,8 +3,11 @@ html(lang="en")
     head
         include partials/header
     body.login
-      .contenedor-formulario
-        h1 Iniciar Sesion en DoTask
+      .container
+
+        .text-center
+          h1.fw-bold.my-4.text-danger Un<span class="text-white">Task</span>
+      
         if locals.mensajes
           .alertas
             each categoria in Object.keys(locals.mensajes)
@@ -12,16 +15,17 @@ html(lang="en")
                     .alerta(class=`${categoria}`)
                         p=error
 
-        form#formulario.caja.caja-login(method="POST" action="/iniciar-sesion")
-            .campo
-                label(for="email") E-mail:
-                input(type="email" name="email" placeholder="Tu Email" value= email)
-            .campo
-                label(for="password") Password:
-                input(type="password" name="password" placeholder="Tu Password" value= password)
-            .campo.enviar
-                input.boton(type="submit" value="Iniciar Sesion")
-            .campo.acciones
-                a(href="/crear-cuenta") Crear una cuenta gratis
-                a(href="/reestablecer") Olvidaste tu contrasena?
+        form.row.justify-content-center.align-items-center(method="POST" action="/iniciar-sesion")
+            .bg-dark.col-md-5.rounded.shadow
+                h1.text-white.text-center.p-2 Iniciar Sesión 
+                .mb-3
+                 input.form-control.border(type="email" name="email" placeholder="Tu Email" value= email)
+                .mb-3
+
+                    input.form-control.border(type="password" name="password" placeholder="Tu Password" value= password)
+                .mb-3.enviar
+                    input.btn.btn-danger(type="submit" value="Iniciar Sesion")
+                .mb-3.acciones.d-flex.justify-content-between
+                    a(href="/crear-cuenta") Crear una cuenta gratis
+                    a(href="/reestablecer") Olvidaste tu contrasena?
       
